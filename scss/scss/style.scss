@@ -1,0 +1,106 @@
+@import "./abstracts/variables";
+@import "./abstracts/mixin";
+@import "./vendors/normalize";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+  background: #fafbff;
+}
+.wrapper {
+  display: flex;
+  position: relative;
+  .sidebar {
+    background-color: #fff;
+    position: fixed;
+    overflow: hidden;
+    width: 306px;
+    height: 100vh;
+    padding: 10px 20px;
+    .sidebar__sidebar-top {
+      .sidebar-top__header {
+        @include displayF;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .sidebar-menu ul li {
+        @include displayF;
+        justify-content: flex-start;
+        gap: 10px;
+        // margin-top: 20px;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        padding-left: 11px;
+
+        &:hover {
+          color: #fff;
+          border-radius: 8px;
+          background: #5932ea;
+          transition: all 0.4s;
+          cursor: pointer;
+          img {
+            color: white;
+          }
+        }
+      }
+    }
+
+    .sidebar-bottom {
+      margin-top: 100px;
+      .sidebar-bottom__upgrade {
+        width: 250px;
+        height: 150px;
+        border-radius: 20px;
+        background: linear-gradient(108deg, #eaabf0 7.37%, #4623e9 95.19%);
+        text-align: center;
+
+        p {
+          font-weight: 600;
+          color: white;
+          letter-spacing: 0.14px;
+          padding: 26px 33px 0 34px;
+        }
+        button {
+          width: 203px;
+          height: 40px;
+          border-radius: 20px;
+          background: #fff;
+          box-shadow: 2px 4px 4px 0px rgba(79, 42, 234, 0.17);
+          padding: 10px 55px 9px;
+          border:none;
+          margin-left: 10px;
+          margin-top: 15px;
+          cursor: pointer;
+          &:hover{
+            color:white;
+            background-color:  rgba(79, 42, 234, 0.17);
+          }
+        }
+      }
+
+      .sidebar-bottom__contact{
+        display: flex;
+        .contact-bottom{
+            display: flex;
+            gap: 10px;
+            margin-top: 40px;
+           div{
+            span{
+                color: #000;
+            }
+           }
+        }
+      }
+    }
+  }
+}
